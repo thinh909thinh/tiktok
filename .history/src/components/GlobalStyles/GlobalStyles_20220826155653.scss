@@ -6,7 +6,6 @@
     --default-layout-header-hight: 60px;
     --default-layout-width-content: 1150px;
     --black: #000;
-    --text-coler: #333;
 }
 * {
     box-sizing: border-box;
@@ -22,14 +21,4 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-}
-button,
-input,
-[tabindex] {
-    border: none;
-    outline: none;
-}
-a[href] {
-    color: var(--text-coler);
-    text-decoration: none;
 }

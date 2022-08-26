@@ -16,6 +16,8 @@
     align-items: center;
     justify-content: space-between;
 }
+.logo {
+}
 .seach {
     width: 361px;
     height: var(--search-hight);
@@ -50,6 +52,8 @@
     &:focus-within {
         border: 1.5px solid rgba(24, 25, 35, 0.2);
     }
+}
+.input {
 }
 .clear,
 .loading {

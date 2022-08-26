@@ -9,11 +9,11 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div>
+                <div className={cx('logo')}>
                     <img src={images.logo} alt="logo" />
                 </div>
                 <div className={cx('seach')}>
-                    <input type="text" placeholder="Enter your name" spellCheck={false}></input>
+                    <input type="text" className={cx('input')} placeholder="Enter your name" spellCheck={false}></input>
                     <button className={cx('clear')}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
