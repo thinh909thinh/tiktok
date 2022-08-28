@@ -69,9 +69,9 @@ function Header() {
                     </Button>
                     <Button primary>log in</Button>
                     <Menu items={MENU_ITEAM}>
-                        <button className={cx('more-btn')}>
+                        <Button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
-                        </button>
+                        </Button>
                     </Menu>
                 </div>
             </div>

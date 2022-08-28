@@ -7,12 +7,9 @@ import {
     faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
-    faGlobe,
-    faCircleQuestion,
-    faKeyboard,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import Menu from '~/components/Popper/Menu';
+
 import Button from '~/components/Button';
 import classNames from 'classnames/bind';
 import images from '~/asset/image';
@@ -20,11 +17,6 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
-const MENU_ITEAM = [
-    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, title: 'tieng viet' },
-    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help', to: '/feedback' },
-    { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: 'Keyboard shortcuts' },
-];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
@@ -68,11 +60,34 @@ function Header() {
                         upload
                     </Button>
                     <Button primary>log in</Button>
-                    <Menu items={MENU_ITEAM}>
+
+                    <Tippy
+                        interactive
+                        visible
+                        render={(attrs) => (
+                            <div className={cx('search-results')} tabIndex="-1" {...attrs}>
+                                <PopperWrapper>
+                                    <h4 className={cx('search-title')}>Acc</h4>
+                                    <AccountItem />
+                                    <AccountItem />
+                                </PopperWrapper>
+                            </div>
+                        )}
+                    >
+                        <div className={cx('seach')}>
+                            <input type="text" placeholder="Enter your name" spellCheck={false}></input>
+                            <button className={cx('clear')}>
+                                <FontAwesomeIcon icon={faCircleXmark} />
+                            </button>
+                            <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />
+                            <button className={cx('search-btn')}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </div>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
-                    </Menu>
+                    </Tippy>
                 </div>
             </div>
         </header>

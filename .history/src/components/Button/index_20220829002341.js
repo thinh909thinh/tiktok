@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Buttom.module.scss';
 
 import { Link } from 'react-router-dom';
+import clsx from 'clsx';
 const cx = classNames.bind(styles);
 
 function Button({

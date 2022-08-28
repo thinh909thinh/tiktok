@@ -16,14 +16,14 @@ import Menu from '~/components/Popper/Menu';
 import Button from '~/components/Button';
 import classNames from 'classnames/bind';
 import images from '~/asset/image';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
+// import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 const MENU_ITEAM = [
-    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, title: 'tieng viet' },
-    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help', to: '/feedback' },
-    { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: 'Keyboard shortcuts' },
+    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, tilte: 'tieng viet' },
+    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, tilte: 'Feedback and Help', to: '/feedback' },
+    { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, tilte: 'Keyboard shortcuts' },
 ];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);

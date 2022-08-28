@@ -1,0 +1,16 @@
+//menu item
+.menu-list {
+    width: 224px;
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-poper {
+    padding-bottom: 8px;
+}
+.menu-item {
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.3);
+    }
+}

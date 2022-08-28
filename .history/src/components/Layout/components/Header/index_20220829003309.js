@@ -64,7 +64,7 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button text href={'/upload'} leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}>
+                    <Button primary leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}>
                         upload
                     </Button>
                     <Button primary>log in</Button>

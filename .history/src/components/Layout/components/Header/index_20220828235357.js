@@ -22,7 +22,7 @@ import AccountItem from '~/components/AccountItem';
 const cx = classNames.bind(styles);
 const MENU_ITEAM = [
     { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, title: 'tieng viet' },
-    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help', to: '/feedback' },
+    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help' },
     { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: 'Keyboard shortcuts' },
 ];
 function Header() {

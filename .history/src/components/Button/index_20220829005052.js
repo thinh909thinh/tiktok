@@ -44,10 +44,11 @@ function Button({
             }
         });
     }
-    if (to) {
-        porps.to = to;
-        Copm = Link;
-    } else if (href) {
+    // if (to) {
+    //     porps.to = to;
+    //     Copm = Link;
+    // }
+    else if (href) {
         porps.href = href;
         Copm = 'a';
     }

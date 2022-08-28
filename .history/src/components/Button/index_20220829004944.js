@@ -47,10 +47,11 @@ function Button({
     if (to) {
         porps.to = to;
         Copm = Link;
-    } else if (href) {
-        porps.href = href;
-        Copm = 'a';
     }
+    //  else if (href) {
+    //     porps.href = href;
+    //     Copm = 'a';
+    // }
     return (
         <Copm className={classes} {...porps}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}

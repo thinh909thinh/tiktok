@@ -46,7 +46,7 @@ function Button({
     }
     if (to) {
         porps.to = to;
-        Copm = Link;
+        Copm = 'a';
     } else if (href) {
         porps.href = href;
         Copm = 'a';

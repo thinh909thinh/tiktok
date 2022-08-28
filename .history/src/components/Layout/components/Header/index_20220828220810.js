@@ -8,8 +8,6 @@ import {
     faPlus,
     faEllipsisVertical,
     faGlobe,
-    faCircleQuestion,
-    faKeyboard,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import Menu from '~/components/Popper/Menu';
@@ -21,9 +19,8 @@ import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 const MENU_ITEAM = [
-    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, title: 'tieng viet' },
-    { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help', to: '/feedback' },
-    { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: 'Keyboard shortcuts' },
+    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, tilte: 'tieng viet' },
+    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, tilte: 'tieng viet' },
 ];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -68,7 +65,7 @@ function Header() {
                         upload
                     </Button>
                     <Button primary>log in</Button>
-                    <Menu items={MENU_ITEAM}>
+                    <Menu>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
