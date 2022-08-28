@@ -1,23 +1,20 @@
 import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-
-import Button from '~/components/Button';
 import classNames from 'classnames/bind';
 import images from '~/asset/image';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
-
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult(['2', '4']);
         }, 0);
-    }, []);
+    });
 
     return (
         <header className={cx('wrapper')}>
@@ -29,7 +26,7 @@ function Header() {
                     interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (
-                        <div className={cx('search-results')} tabIndex="-1" {...attrs}>
+                        <div className={cx('search-results')} tabindex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Acc</h4>
                                 <AccountItem />
@@ -49,12 +46,7 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}>
-                    <Button text href={'/upload'} leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}>
-                        upload
-                    </Button>
-                    <Button primary>log in</Button>
-                </div>
+                <div className={cx('actions')}></div>
             </div>
         </header>
     );

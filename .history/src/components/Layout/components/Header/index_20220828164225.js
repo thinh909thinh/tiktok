@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import Button from '~/components/Button';
@@ -50,10 +50,12 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button text href={'/upload'} leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}>
+                    <Button text href={'/upload'}>
                         upload
                     </Button>
-                    <Button primary>log in</Button>
+                    <Button primary className={cx('cus')}>
+                        log in
+                    </Button>
                 </div>
             </div>
         </header>
