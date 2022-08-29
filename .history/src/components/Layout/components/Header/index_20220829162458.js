@@ -12,14 +12,9 @@ import {
     faKeyboard,
     faUpload,
     faMessage,
-    faUser,
-    faCoins,
-    faGear,
-    faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 import Menu from '~/components/Popper/Menu';
 import Button from '~/components/Button';
 import classNames from 'classnames/bind';
@@ -46,7 +41,6 @@ const MENU_ITEAM = [
 ];
 
 function Header() {
-    const currentUser = true;
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
@@ -61,30 +55,7 @@ function Header() {
             default:
         }
     };
-    const userMenu = [
-        {
-            icon: <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>,
-            title: 'View Profile',
-            to: '/@hihi',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faCoins}></FontAwesomeIcon>,
-            title: 'Get Coin',
-            to: '/coin',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faGear}></FontAwesomeIcon>,
-            title: 'Settings',
-            to: '/settings',
-        },
-        ...MENU_ITEAM,
-        {
-            icon: <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>,
-            title: 'Log Out',
-            to: '/log',
-            setparte: true,
-        },
-    ];
+    var currentUser = true;
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -118,31 +89,33 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy content="Upload Video">
-                                <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faUpload}></FontAwesomeIcon>
-                                </button>
-                            </Tippy>
-                            <Tippy content="Send Message">
-                                <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
-                                </button>
-                            </Tippy>
+                            <button className={cx('actions-btn')}>
+                                <FontAwesomeIcon icon={faUpload}></FontAwesomeIcon>
+                            </button>
+                            <button className={cx('actions-btn')}>
+                                <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
+                            </button>
                         </>
                     ) : (
                         <>
-                            <Button text href={'/upload'} leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}>
-                                Upload
-                            </Button>
-                            <Button primary>Log in</Button>
+                            <Tippy>
+                                <Button
+                                    text
+                                    href={'/upload'}
+                                    leftIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}
+                                >
+                                    Upload
+                                </Button>
+                                <Button primary>Log in</Button>
+                            </Tipp>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEAM} onChange={handleMenuChange}>
+                    <Menu items={MENU_ITEAM} onChange={handleMenuChange}>
                         {currentUser ? (
                             <img
                                 className={cx('user-avatar')}
                                 alt="nguyen van a"
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1e7994825ef38f76c86dd819d35f9b8~c5_100x100.jpeg?x-expires=1661936400&x-signature=kKFy1%2FyYvYMlzjQatx0CMlYmQvE%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/16c43ae5f2e5bc862c43ea2c1777c9ae~c5_100x100.jpeg?x-expires=1661936400&x-signature=FwyBT9IByPYxO4XB7cphcOAaNIY%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

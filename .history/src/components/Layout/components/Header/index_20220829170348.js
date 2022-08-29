@@ -82,7 +82,6 @@ function Header() {
             icon: <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>,
             title: 'Log Out',
             to: '/log',
-            setparte: true,
         },
     ];
     return (

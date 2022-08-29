@@ -11,23 +11,20 @@
 }
 .menu-item {
     width: 100%;
-    border-radius: 0 !important;
-    justify-content: flex-start !important;
-    padding: 11px 16px !important;
-    line-height: 1.8rem !important;
-    font-weight: 500 !important;
+    line-height: 1.8rem;
+    border-radius: 0;
+    justify-content: flex-start;
+    padding: 11px 16px;
+    line-height: 1.8rem;
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
-    }
-    &.setparte {
-        border-top: 1px solid rgba(22, 24, 35, 0.13);
     }
 }
 //header language
 .header {
     position: relative;
     height: 50px;
-    margin-top: 8px;
+    margin-top: -8px;
 }
 .back-btn {
     width: 50px;

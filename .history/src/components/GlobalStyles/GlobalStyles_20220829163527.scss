@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root {
     --primary: #fe2c55;
     // deaful layout
@@ -7,7 +7,7 @@
     --default-layout-padding: 24px;
     --default-layout-width-content: 1150px;
     --black: #000;
-    --text-coler: #161823;
+    --text-coler: #333;
     --white: white;
 }
 * {
@@ -29,8 +29,6 @@ input,
 [tabindex] {
     border: none;
     outline: none;
-    color: inherit;
-    color: currentColor;
 }
 a[href] {
     color: var(--text-coler);
@@ -50,11 +48,5 @@ body {
     }
     .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
-    }
-    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
-        top: -8px;
-    }
-    .tippy-content {
-        padding: 8px 9px;
     }
 }

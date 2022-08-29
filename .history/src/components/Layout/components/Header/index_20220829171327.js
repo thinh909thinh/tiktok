@@ -92,6 +92,7 @@ function Header() {
                     <img src={images.logo} alt="logo" />
                 </div>
                 <HeadlessTippy
+                    visible
                     interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (

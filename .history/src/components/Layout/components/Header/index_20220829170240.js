@@ -15,7 +15,6 @@ import {
     faUser,
     faCoins,
     faGear,
-    faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -79,10 +78,9 @@ function Header() {
         },
         ...MENU_ITEAM,
         {
-            icon: <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>,
-            title: 'Log Out',
-            to: '/log',
-            setparte: true,
+            icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+            title: 'Feedback and Help',
+            to: '/feedback',
         },
     ];
     return (

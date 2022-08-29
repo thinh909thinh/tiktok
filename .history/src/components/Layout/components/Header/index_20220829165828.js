@@ -12,10 +12,6 @@ import {
     faKeyboard,
     faUpload,
     faMessage,
-    faUser,
-    faCoins,
-    faGear,
-    faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -62,27 +58,11 @@ function Header() {
         }
     };
     const userMenu = [
-        {
-            icon: <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>,
-            title: 'View Profile',
-            to: '/@hihi',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faCoins}></FontAwesomeIcon>,
-            title: 'Get Coin',
-            to: '/coin',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faGear}></FontAwesomeIcon>,
-            title: 'Settings',
-            to: '/settings',
-        },
         ...MENU_ITEAM,
         {
-            icon: <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>,
-            title: 'Log Out',
-            to: '/log',
-            setparte: true,
+            icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+            title: 'Feedback and Help',
+            to: '/feedback',
         },
     ];
     return (
@@ -137,7 +117,7 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEAM} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? { userMenu } : MENU_ITEAM} onChange={handleMenuChange}>
                         {currentUser ? (
                             <img
                                 className={cx('user-avatar')}

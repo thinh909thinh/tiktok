@@ -118,7 +118,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy content="Upload Video">
+                            <Tippy content="Upload Video" visible>
                                 <button className={cx('actions-btn')}>
                                     <FontAwesomeIcon icon={faUpload}></FontAwesomeIcon>
                                 </button>
