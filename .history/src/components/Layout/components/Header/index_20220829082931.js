@@ -21,18 +21,7 @@ import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 const MENU_ITEAM = [
-    {
-        icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>,
-        title: 'tieng viet',
-        children: {
-            title: 'language',
-            data: [
-                { type: 'language', code: 'en', title: 'English' },
-                { type: 'language', code: 'vi', title: 'Viet' },
-                { type: 'language', code: 'loa', title: 'Lao' },
-            ],
-        },
-    },
+    { icon: <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>, title: 'tieng viet' },
     { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: 'Feedback and Help', to: '/feedback' },
     { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: 'Keyboard shortcuts' },
 ];
@@ -40,17 +29,10 @@ function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult(['1', '2']);
         }, 0);
     }, []);
-    // handle logic
-    const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                break;
-            default:
-        }
-    };
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -86,7 +68,7 @@ function Header() {
                         upload
                     </Button>
                     <Button primary>log in</Button>
-                    <Menu items={MENU_ITEAM} onChange={handleMenuChange}>
+                    <Menu items={MENU_ITEAM}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>

@@ -45,11 +45,7 @@ function Header() {
     }, []);
     // handle logic
     const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                break;
-            default:
-        }
+        console.log(menuItem);
     };
     return (
         <header className={cx('wrapper')}>

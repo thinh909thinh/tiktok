@@ -27,9 +27,9 @@ const MENU_ITEAM = [
         children: {
             title: 'language',
             data: [
-                { type: 'language', code: 'en', title: 'English' },
-                { type: 'language', code: 'vi', title: 'Viet' },
-                { type: 'language', code: 'loa', title: 'Lao' },
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Viet' },
+                { code: 'loa', title: 'Lao' },
             ],
         },
     },
@@ -43,14 +43,7 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
-    // handle logic
-    const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                break;
-            default:
-        }
-    };
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -86,7 +79,7 @@ function Header() {
                         upload
                     </Button>
                     <Button primary>log in</Button>
-                    <Menu items={MENU_ITEAM} onChange={handleMenuChange}>
+                    <Menu items={MENU_ITEAM}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>

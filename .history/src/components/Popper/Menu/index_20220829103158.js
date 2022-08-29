@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [], onChange = () => {} }) {
+function Menu({ children, items = [], onchange = () => {} }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -23,7 +23,7 @@ function Menu({ children, items = [], onChange = () => {} }) {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
                         } else {
-                            onChange(item);
+                            onchange(item);
                         }
                     }}
                 />
@@ -32,6 +32,7 @@ function Menu({ children, items = [], onChange = () => {} }) {
     };
     return (
         <Tippy
+            visible
             delay={[0, 500]}
             placement="bottom-end"
             interactive
