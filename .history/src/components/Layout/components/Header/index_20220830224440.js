@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
     faSpinner,
+    faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
     faGlobe,
     faCircleQuestion,
     faKeyboard,
+    faUpload,
+    faMessage,
     faUser,
     faCoins,
     faGear,
@@ -23,8 +26,7 @@ import classNames from 'classnames/bind';
 import images from '~/asset/image';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
-import { MessageIcon, SeachIcon, UploadIcon } from '~/components/icon';
-import Image from '~/components/image';
+import { UploadIcon } from '~/components/icon';
 
 const cx = classNames.bind(styles);
 const MENU_ITEAM = [
@@ -110,7 +112,7 @@ function Header() {
                         </button>
                         <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />
                         <button className={cx('search-btn')}>
-                            <SeachIcon />
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -124,7 +126,7 @@ function Header() {
                             </Tippy>
                             <Tippy content="Send Message">
                                 <button className={cx('actions-btn')}>
-                                    <MessageIcon />
+                                    <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
                                 </button>
                             </Tippy>
                         </>
@@ -138,11 +140,10 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEAM} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <Image
+                            <img
                                 className={cx('user-avatar')}
                                 alt="nguyen van a"
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1e7994825ef38f76c86dd819d35f9b8~c5_100x100.jpeg?x-expires=1661936400&x-signature=kKFy1%2FyYvYMlzjQatx0CMlYmQvE%3D"
-                                customFallback="https://th.bing.com/th/id/R.7bead55e7383d268a8548acbcab691bc?rik=UUSxFD%2fY4GxkDQ&pid=ImgRaw&r=0"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
